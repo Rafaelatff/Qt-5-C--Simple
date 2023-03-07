@@ -1,6 +1,30 @@
-# Qt-5-C--Simple
+# Qt-5-Cpp-Codes
+
 Repositorie created to help during the course 'Qt 5 C++ GUI Development For Beginners : The Fundamentals'.
 
+# C++ <iostream>
+
+When I add the lib #include <iostream>, I can use:
+
+* cin, that is a console input.
+* cout, that is a console output.
+* cerr, for console error.
+* clog, for log messages.
+
+I can, use the standard libary function by adding, right before the main(), the line:
+
+´´´c++
+    using namespace std; //declaring standard library
+´´´
+
+Or, instead I can use the library as follows:
+
+´´´c++
+std::cout << "Hello World!" << std::endl;
+´´´    
+
+Those are not really need, when I use the 'cout', but we can practice.
+    
 ## Code 1
 
 Let's create a simple, with no dependencies, C++ application.
@@ -47,10 +71,69 @@ But Qt Creator didn't generate our .exe file. Checking the Q&A on Udemy I found 
 Now I have the solution on terminal.
 
 ![image](https://user-images.githubusercontent.com/58916022/223410611-28540c80-7317-4d9f-b3a5-9a7866d065be.png)
+    
+## Code 2   
 
+Let's use the 'cerr' function.
+    
+´´´c++
+std::cerr << "There was an error" << std::endl;
+´´´
+![image](https://user-images.githubusercontent.com/58916022/223430602-8fcdc57f-beba-471e-b01a-1465637c3a4c.png)
 
+## Code 3       
+    
+Let's use the 'clog' function.    
 
+´´´c++
+std::clog << "This is a log message" << std::endl;
+´´´
+    
+![image](https://user-images.githubusercontent.com/58916022/223430851-995f25d5-581f-45dd-9b3e-f3a644292f9a.png)
+    
+## Code 4
 
+Now let's read the user name and store it on a variable and then write the name on the screen.
 
+´´´c++
+#include <string>
+std::string name;
+std::cout << "Please type in yout first name: ";
+std::cin >> name;
+std::cout <<"Your first name is: " << name << std::endl;
+´´´
+    
+![image](https://user-images.githubusercontent.com/58916022/223431309-cf9846be-f84d-45e0-ae91-6e6f2b7169cf.png)
+    
+# C++ <string> 
 
+in the Qt IDE, when using MinGW, the types are:
 
+| Type | Size | Description |
+| --- | --- | --- |
+| int | 4 bytes | stores integers |
+| char | 1 byte | stores characters |
+| bool | 1 byte | stores booleans or logical values |
+| float | 4 bytes | stores single precision floating point number |
+| double | 8 bytes | stores double precision floating point numbers |
+| wchar_t | 2 bytes|  | 
+
+To check the size we can use:
+´´´c++
+count << "Size of int: " << sizeof(int) << " bytes" << endl;
+´´´
+
+Type modifiers:
+* Signed, for negative and positive.
+* Unsigned, only for positive.
+* Short, to downsize memory space ocupied by variable.
+* Long, to expand and ocupe more space.
+
+´´´c++
+    string hello = "hello world";
+    unsigned int number = 7;
+
+    std::cout << "Message: " << hello << endl;
+    std::cout << "Number: " << number << endl;
+´´´
+    
