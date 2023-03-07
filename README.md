@@ -171,4 +171,32 @@ for (variable equal to; logical condition; action as incrementing the variable){
 ```
 
 We also have: 'while(condition){}' and the 'do {} while(condition)'.
+
+# C++ <stdlib.h> and <time.h>
+
+Course and code shows an example that uses the operator %, together with time and rand function to generate random number based on time.
+
+```c++
+#include <stdlib.h> 	// to use srand, rand
+#include <time.h>	// to use time functions
+srand (time(NULL));
+```
+
+We have some warnings:
+
+* **Nullability Issue**: This is giving us a hint that in the C++ 11 standard, NULL isn't recomended anymore to represent a null pointer. There is a new keyword "nullptr" for that. We're going to fix that in a moment.
+
+* **Value Conversion Issue**: Here we have a value conversion issue. We are getting a value from the time() function , which returns a long, and passing that value to srand() which expects unsigned int. The compiler is warning us again here that we may loose on the precision of the number as we are shrinking its range. (long covers a wider range than unsigned int). We get rid of the warning by explicitly casting from long to unsigned int.
+
+```c++
+srand((unsigned int)time(nullptr));
+```
+* In C++ 11 compliant compilers, this is going to give another warning . Something like "use of old style cast". In other words , this warning is saying that we are transforming a data type to another ( casting) the old way. C++ 11 has many different ways to cast data types but we're just going to use static_cast that I find to be the simplest one:
+
+```c++
+srand (static_cast<unsigned int>((time(nullptr))));
+```
+
+![image](https://user-images.githubusercontent.com/58916022/223446468-80263092-fdfd-45de-b25b-5ca98826e4a4.png)
+
     
