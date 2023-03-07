@@ -199,4 +199,22 @@ srand (static_cast<unsigned int>((time(nullptr))));
 
 ![image](https://user-images.githubusercontent.com/58916022/223446468-80263092-fdfd-45de-b25b-5ca98826e4a4.png)
 
+# Functions
+
+I can have two functions with same name and different types, such as:
+
+```c++
+int sumation (float a, float b){
+	return a + b;
+}
+float sumation (float a, float b){
+	return a + b;
+}
+```
+
+But when we call the float type function, we must add de number togeter with a **f**, such as:
+
+```c++
+	cout << "The sum of 3.3 and 7.2 is:" << sumation(3.3f,7.2f) << endl;
+```
     
